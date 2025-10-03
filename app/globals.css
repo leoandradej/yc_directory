@@ -42,6 +42,10 @@
     color: var(--foreground);
     font-family: "Work Sans", sans-serif;
   }
+
+  #sentry-feedback {
+    --inset: auto auto 0 0 !important;
+  }
 }
 
 /* @media (prefers-color-scheme: dark) {

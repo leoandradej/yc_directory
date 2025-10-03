@@ -32,9 +32,7 @@ const StartupForm = () => {
       const result = await createPitch(prevState, formData, pitch);
 
       if (result.status == "SUCCESS") {
-        toast("Success", {
-          description: "Your startup pitch has been created successfully",
-        });
+        toast.success("Your startup pitch has been created successfully");
         router.push(`/startup/${result._id}`);
       }
 
@@ -45,16 +43,12 @@ const StartupForm = () => {
 
         setErrors(fieldErrors as unknown as Record<string, string>);
 
-        toast("Error", {
-          description: "Please check your inputs and try again",
-        });
+        toast.error("Please check your inputs and try again");
 
         return { ...prevState, error: "Validation Failed", status: "ERROR" };
       }
 
-      toast("Error", {
-        description: "An unexpected error has occurred",
-      });
+      toast.error("An unexpected error has occurred");
 
       return {
         ...prevState,
