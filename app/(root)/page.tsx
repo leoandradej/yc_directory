@@ -24,7 +24,7 @@ export default async function Home({
         <h1 className="heading">
           Pitch Your Startup, <br /> Connect with Entrepreneurs
         </h1>
-        <p className="sub-heading !max-w-3xl">
+        <p className="sub-heading !max-w-3xl text-shadow-lg/50">
           Submit Ideas, Vote on Pitches, and Get Noticed in Virtual
           Competitions.
         </p>

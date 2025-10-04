@@ -163,6 +163,14 @@
     @apply border-[5px]! py-4! border-black! bg-white! text-black! relative shadow-100! font-work-sans! font-medium! hover:shadow-none! transition-all! duration-500!;
   }
 
+  .navbar_btn {
+    @apply max-sm:hidden max-sm:p-0 bg-transparent px-3 py-1.5 rounded-full hover:text-white hover:bg-primary transition-colors duration-300 cursor-pointer;
+  }
+
+  .navbar_avatar {
+    @apply border-[.15rem] border-solid border-transparent hover:border-primary transition-colors duration-300;
+  }
+
   /* Search Form */
   .search-form {
     @apply max-w-3xl w-full min-h-[80px] bg-white border-[5px] border-black rounded-[80px] text-[24px] mt-8 px-5 flex flex-row items-center gap-5;
@@ -173,7 +181,7 @@
   }
 
   .search-btn {
-    @apply size-[50px]! rounded-full! bg-black! flex! justify-center! items-center!;
+    @apply size-[50px]! rounded-full! bg-black! flex! justify-center! items-center! hover:bg-primary! transition-colors! duration-300! cursor-pointer!;
   }
 
   /* Startup Card */
@@ -189,12 +197,16 @@
     @apply font-normal text-[16px] line-clamp-2 my-3 text-black-100 break-all;
   }
 
+  .startup-card_avatar {
+    @apply rounded-full border-[.15rem] border-solid border-transparent hover:border-primary transition-colors duration-300;
+  }
+
   .startup-card_img {
     @apply w-full h-[164px] rounded-[10px] object-cover;
   }
 
   .startup-card_btn {
-    @apply rounded-full! bg-black-200! font-medium! text-[16px]! text-white px-5 py-3!;
+    @apply rounded-full! bg-black-200! font-medium! text-[16px]! text-white px-5 py-3! hover:bg-primary! transition-colors! duration-300!;
   }
 
   .startup-card_skeleton {
@@ -245,16 +257,13 @@
 }
 
 @utility pattern {
-  background-image: linear-gradient(
+  background-image: repeating-linear-gradient(
     to right,
-    transparent 49.5%,
-    rgba(251, 232, 67, 0.2) 49.5%,
-    rgba(251, 232, 67, 0.6) 50.5%,
-    transparent 50.5%
+    #fbe843,
+    #fbe843 1px,
+    transparent 1px,
+    transparent 50px
   );
-  background-size: 5% 100%;
-  background-position: center;
-  background-repeat: repeat-x;
 }
 
 @utility w-md-editor-toolbar {
