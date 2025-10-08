@@ -42,11 +42,15 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
       </section>
 
       <section className="section_container">
-        <img
-          src={post.image}
-          alt="thumbnail"
-          className="w-full h-auto rounded-xl"
-        />
+        <div className="relative w-full aspect-video">
+          <Image
+            src={post.image}
+            alt="thumbnail"
+            fill
+            className="object-cover rounded-xl"
+            sizes="(max-width: 1024px) 100vw, 75vw"
+          />
+        </div>
 
         <div className="space-y-5 mt-10 max-w-4xl mx-auto">
           <div className="flex-between gap-5">

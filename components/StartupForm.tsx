@@ -12,12 +12,20 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { createPitch } from "@/lib/actions";
 
+interface ActionState {
+  error: string;
+  status: "INITIAL" | "SUCCESS" | "ERROR";
+}
+
 const StartupForm = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [pitch, setPitch] = useState("");
   const router = useRouter();
 
-  const handleFormSubmit = async (prevState: any, formData: FormData) => {
+  const handleFormSubmit = async (
+    prevState: ActionState,
+    formData: FormData
+  ) => {
     try {
       const formValues = {
         title: formData.get("title") as string,
@@ -58,10 +66,13 @@ const StartupForm = () => {
     }
   };
 
-  const [state, formAction, isPending] = useActionState(handleFormSubmit, {
-    error: "",
-    status: "INITIAL",
-  });
+  const [state, formAction, isPending] = useActionState<ActionState, FormData>(
+    handleFormSubmit,
+    {
+      error: "",
+      status: "INITIAL",
+    }
+  );
 
   return (
     <form action={formAction} className="startup-form">
