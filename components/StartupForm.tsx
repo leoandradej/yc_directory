@@ -11,11 +11,7 @@ import { z } from "zod";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { createPitch } from "@/lib/actions";
-
-interface ActionState {
-  error: string;
-  status: "INITIAL" | "SUCCESS" | "ERROR";
-}
+import { ActionState } from "@/lib/types";
 
 const StartupForm = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
